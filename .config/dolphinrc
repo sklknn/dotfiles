@@ -1,0 +1,21 @@
+[General]
+EditableUrl=true
+Version=202
+ViewPropsTimestamp=2025,2,6,16,57,27.031
+
+[IconsMode]
+PreviewSize=96
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[MainWindow]
+MenuBar=Disabled
+ToolBarsMovable=Disabled
+
+[PreviewSettings]
+Plugins=appimagethumbnail,opendocumentthumbnail,kraorathumbnail,audiothumbnail,jxl,gdk-pixbuf-thumbnailer,imagethumbnail,exrthumbnail,jpegthumbnail,windowsimagethumbnail,svgthumbnail,windowsexethumbnail,comicbookthumbnail,directorythumbnail,textthumbnail,djvuthumbnail,cursorthumbnail,ebookthumbnail
+
+[UiSettings]
+ColorScheme=catpuccin-mocha-sapphire
