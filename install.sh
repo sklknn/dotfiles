@@ -46,6 +46,11 @@ stow --adopt .
 
 yay -S --noconfirm spicetify-cli 
 
-yay -S --noconfirm fzf ttf-jetbrains-mono-nerd
+yay -S --noconfirm fzf ttf-jetbrains-mono-nerd zoxide
 
-reboot
+chsh -s /bin/zsh
+
+systemctl --user enable --now hyprpaper.service
+systemctl --user enable --now hypridle.service
+systemctl --user enable --now hyprpolkitagent.service
+
