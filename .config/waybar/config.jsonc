@@ -72,7 +72,7 @@
     },
     "custom/launcher":{
         "format": " ",
-        "on-click": "uwsm app -- fuzzel --launch-prefix=$(uwsm app -- )",
+        "on-click": "uwsm app -- swaync-client -t",
         "on-click-right": "killall fuzzel"
     },
     "custom/musicPlayer":{
