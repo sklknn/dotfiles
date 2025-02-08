@@ -72,8 +72,8 @@
     },
     "custom/launcher":{
         "format": " ",
-        "on-click": "uwsm app -- walker",
-        "on-click-right": "killall walker"
+        "on-click": "uwsm app -- fuzzel --launch-prefix=$(uwsm app -- )",
+        "on-click-right": "killall fuzzel"
     },
     "custom/musicPlayer":{
 
