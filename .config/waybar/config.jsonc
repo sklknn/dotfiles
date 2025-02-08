@@ -5,7 +5,7 @@
 	"margin-top": 0,
 	"modules-left": ["cpu","memory", "network","custom/spotify", "tray"],
 	"modules-center": ["hyprland/workspaces"],
-	"modules-right": ["backlight","pulseaudio","clock", "battery","custom/launcher"],
+	"modules-right": ["hyprland/language","backlight","pulseaudio","clock", "battery","custom/launcher"],
 	
 	"pulseaudio": {
 		"tooltip": false,
@@ -17,11 +17,17 @@
 		},
         "on-click": "uwsm app -- pavucontrol"
 	},
+    "hyprland/language": {
+		"tooltip": false,
+        "format": "{flag} {short}",
+        "format-en": "US"
+	},
 	"network": {
 		// "interface": "wlp2*", // (Optional) To force the use of this interface
 		"format-wifi": "",
-		"format-ethernet": "",
-		"tooltip-format": "{essid} ({signalStrength}%)",
+		"format-ethernet": "󰈀 {bandwidthTotalBytes}",
+		"tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "{ipaddr}",
 		"format-linked": "{ifname} (No IP) ",
 		"format-disconnected": "⚠",
         "on-click": "uwsm app -- iwdgui"
@@ -71,9 +77,24 @@
 
     },
     "custom/launcher":{
-        "format": " ",
-        "on-click": "uwsm app -- swaync-client -t",
-        "on-click-right": "killall fuzzel"
+    	"tooltip": false,
+    	"format": "{icon}",
+    	"format-icons": {
+      	  "notification": "<span foreground='red'><sup></sup></span>",
+      	  "none": "",
+      	  "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      	  "dnd-none": "",
+      	  "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      	  "inhibited-none": "",
+      	  "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      	  "dnd-inhibited-none": ""
+    	},
+    	"return-type": "json",
+    	"exec-if": "which swaync-client",
+    	"exec": "swaync-client -swb",
+    	"on-click": "swaync-client -t -sw",
+    	"on-click-right": "swaync-client -d -sw",
+    	"escape": true
     },
     "custom/musicPlayer":{
 

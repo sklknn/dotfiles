@@ -54,3 +54,6 @@ systemctl --user enable --now hyprpaper.service
 systemctl --user enable --now hypridle.service
 systemctl --user enable --now hyprpolkitagent.service
 
+yay -S --noconfirm greetd greetd-regreet-git npm
+
+systemctl enable greetd.service

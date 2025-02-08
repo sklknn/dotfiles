@@ -95,6 +95,18 @@ window#waybar.hidden {
 	background: #B5E8E0;
 }
 
+#language {
+    margin-top: 0px;
+    margin-left: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 0px;
+    border-radius: 10px;
+    transition: none;
+    color: #161320;
+    background: #B5E8E0;
+}
+
 #battery.charging, #battery.plugged {
 	color: #161320;
     background-color: #B5E8E0;
