@@ -1,3 +1,4 @@
 .git
 .gitmodules
 README.*
+install.sh
