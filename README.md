@@ -5,7 +5,8 @@ Check .config folders for used requirements, such as fonts and other packages fo
 ## This is hyprland/arch dotfiles. Made for personal use. Feel free to take some configs if you want 
 
 # Installation 
-simply run 
-'''
+simply run
+
+```bash
 curl https://raw.githubusercontent.com/sklknn/dotfiles/refs/heads/master/install.sh > install.sh && bash install.sh 
-'''
+```
