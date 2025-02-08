@@ -1,11 +1,16 @@
 {
 	"layer": "top",
 	// Using margin-bottom with a negative value in order to reduce the space between Hyprland window and waybar
-	"margin-bottom": 0,
-	"margin-top": 0,
-	"modules-left": ["cpu","memory", "network","custom/spotify", "tray"],
-	"modules-center": ["hyprland/workspaces"],
-	"modules-right": ["hyprland/language","backlight","pulseaudio","clock", "battery","custom/launcher"],
+    "exclusive": true,
+    "passthrough": false,
+    "position": "top",
+    "spacing": 3,
+    "fixed-center": true,
+    "ipc": true,
+
+	"modules-left": ["cpu","memory", "network","custom/playerctl", "tray"],
+	"modules-center": ["hyprland/window","hyprland/workspaces"],
+	"modules-right": ["hyprland/language","backlight","pulseaudio","clock", "battery","custom/notify"],
 	
 	"pulseaudio": {
 		"tooltip": false,
@@ -18,10 +23,27 @@
         "on-click": "uwsm app -- pavucontrol"
 	},
     "hyprland/language": {
-		"tooltip": false,
-        "format": "{flag} {short}",
-        "format-en": "US"
-	},
+	    "format": "{}",
+    	"format-en": "US",
+    	"format-ru": "RU",
+    	"keyboard-name": "razer-razer-blackwidow-x-tournament-edition-keyboard",
+    	"on-click": "hyprctl switchxkblayout $SET_KB next"
+    },
+
+    "hyprland/window": {
+	    "format": "{}",
+    	"max-length": 25,
+    	"separate-outputs": true,
+    	"offscreen-css": true,
+    	"offscreen-css-text": "(inactive)",
+    	"rewrite": {
+    		"(.*) — Mozilla Firefox": " $1",
+    		"(.*) - zsh": " [$1]",
+    		"(.*) - $term": " [$1]",
+            "(.*) - nvim": " [$1]",
+            "(.*) - spotify": " [$1]"
+    	}
+    },
 	"network": {
 		// "interface": "wlp2*", // (Optional) To force the use of this interface
 		"format-wifi": "",
@@ -32,13 +54,32 @@
 		"format-disconnected": "⚠",
         "on-click": "uwsm app -- iwdgui"
 		},
-	"backlight": {
-		"tooltip": false,
-		"format": " {}%",
-		"interval":1,
-		"on-scroll-up": "light -A 5",
-		"on-scroll-down": "light -U 5"
-	},
+    "backlight": {
+    	"interval": 2,
+    	"align": 0,
+    	"rotate": 0,
+    	//"format": "{icon} {percent}%",
+    	"format-icons": [
+    		" ",
+    		" ",
+    		" ",
+    		"󰃝 ",
+    		"󰃞 ",
+    		"󰃟 ",
+    		"󰃠 "
+    	],
+    	"format": "{icon}",
+    	//"format-icons": ["","","","","","","","","","","","","","",""],
+    	"tooltip-format": "backlight {percent}%",
+    	"icon-size": 10,
+    	"on-click": "",
+    	"on-click-middle": "",
+    	"on-click-right": "",
+    	"on-update": "",
+    	"on-scroll-up": "light -A 5",
+    	"on-scroll-down": "light -U 5",
+    	"smooth-scrolling-threshold": 1
+    },
     "battery": {
         "states": {
             "good": 95,
@@ -56,27 +97,44 @@
 		"spacing": 10
 	},
     "clock": {
-        "format": "{:%H:%M %d/%m}"
+    	"interval": 15,
+        //"format": " {:%I:%M %p}", // AM PM format
+        "format": " {:%H:%M}", // 24H
+    	"format-alt": " {:%H:%M   %Y, %d %B, %A}",
+    	"tooltip": false
     },
     "cpu": {
-        "interval": 15,
-        "format": " {}%",
-        "max-length": 10
+	    "format": "{usage}% 󰍛",
+    	"interval": 1,
+    	"min-length": 5,
+    	"format-alt-click": "click",
+    	"format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% 󰍛",
+    	"format-icons": [
+    		"▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"
+    	]
+    	//"on-click-right": "gnome-system-monitor",
     },
     "memory": {
-        "interval": 30,
-        "format": " {}%",
-        "max-length": 10
+	    "interval": 10,
+    	"format": "{used:0.1f}G 󰾆",
+    	"format-alt": "{percentage}% 󰾆",
+    	"format-alt-click": "click",
+    	"tooltip": true,
+    	"tooltip-format": "{used:0.1f}GB/{total:0.1f}G",
+    	"on-click-right": "kitty --title btop sh -c 'btop'"
     },
-    "custom/spotify": {
-    	"interval": 1,
-	"return-type": "json",
-	"exec": "~/.config/waybar/scripts/spotify.sh",
-	"exec-if": "pgrep spotify",
-	"escape": true
-
+    "custom/playerctl": {
+	    "format": "<span>{}</span>",
+    	"return-type": "json",
+    	"max-length": 25,
+    	"exec": "playerctl -a metadata --format '{\"text\": \"{{artist}}  {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    	"on-click-middle": "playerctl play-pause",
+    	"on-click": "playerctl previous",
+    	"on-click-right": "playerctl next",
+    	"scroll-step": 5.0,
+    	"smooth-scrolling-threshold": 1
     },
-    "custom/launcher":{
+    "custom/notify":{
     	"tooltip": false,
     	"format": "{icon}",
     	"format-icons": {
@@ -95,9 +153,6 @@
     	"on-click": "swaync-client -t -sw",
     	"on-click-right": "swaync-client -d -sw",
     	"escape": true
-    },
-    "custom/musicPlayer":{
-
     },
     "hyrpland/workspaces": {
     	"format": "{icon}",
