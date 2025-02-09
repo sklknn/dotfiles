@@ -1,0 +1,39 @@
+window#osd {
+  padding: 12px 20px;
+  border-radius: 999px;
+  border: none;
+  background: alpha(rgb(69, 71, 90),0.8); /*80%*/
+
+  #container {
+    margin: 16px;
+  }
+
+  image,
+  label {
+    color: rgb(108, 112, 134);
+  }
+
+  progressbar:disabled,
+  image:disabled {
+    opacity: 0.5;
+  }
+
+  progressbar {
+    min-height: 6px;
+    border-radius: 999px;
+    background: transparent;
+    border: none;
+  }
+  trough {
+    min-height: inherit;
+    border-radius: inherit;
+    border: none;
+    background: alpha(rgb(108, 112, 134),0,5); /*50%*/
+  }
+  progress {
+    min-height: inherit;
+    border-radius: inherit;
+    border: none;
+    background: rgb(108, 112, 134);
+  }
+}

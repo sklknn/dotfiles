@@ -44,8 +44,6 @@ yay -S --noconfirm stow
 
 stow --adopt .
 
-yay -S --noconfirm spicetify-cli 
-
 yay -S --noconfirm fzf ttf-jetbrains-mono-nerd zoxide
 
 chsh -s /bin/zsh
@@ -60,5 +58,8 @@ systemctl enable greetd.service
 
 yay -S --noconfirm archlinux-xdg-menu
 
-yay -S --noconfirm cliphist udoskie hyprshot imv
+yay -S --noconfirm cliphist udoskie hyprshot imv swayosd
 
+sudo systemctl enable --now swayosd-libinput-backend.service
+
+sudo usermod -a -G video $USER
