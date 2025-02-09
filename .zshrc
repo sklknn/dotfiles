@@ -75,3 +75,5 @@ alias cd='z'
 #Shell integrations 
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
+
+export PATH=$PATH:/home/sklknn/.spicetify
