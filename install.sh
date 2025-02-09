@@ -32,7 +32,7 @@ systemctl --user enable --now hyprpolkitagent.service
 
 yay -S --noconfirm fuzzel wl-clipboard cliphist
 
-yay -S --noconfirm dolphin neovim
+yay -S --noconfirm nautilus neovim
 
 yay -S --noconfitm nwg-look qt5ct qt6ct qt4ct
 
