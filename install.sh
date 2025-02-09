@@ -60,5 +60,5 @@ systemctl enable greetd.service
 
 yay -S --noconfirm archlinux-xdg-menu
 
-yay -S --noconfirm cliphist udoskie
+yay -S --noconfirm cliphist udoskie hyprshot imv
 
