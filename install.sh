@@ -59,3 +59,6 @@ yay -S --noconfirm greetd greetd-regreet-git npm
 systemctl enable greetd.service
 
 yay -S --noconfirm archlinux-xdg-menu
+
+yay -S --noconfirm cliphist udoskie
+

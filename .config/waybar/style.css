@@ -5,27 +5,27 @@
 	font-weight: bold;
 	min-height: 0;		
 	/* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
-	font-size: 103%;
+	font-size: 100%;
 	font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
-    padding-left: 7px;
-    padding-right: 7px;
+    padding-left: 0px;
+    padding-right: 0px;
     padding-top: 0px;
     padding-bottom: 0px;
 }
 
 window#waybar {
-	background: #11111b;
 	color: #f38ba8;
     padding-left: 0px;
     padding-right: 0px;
+    background-color: transparent;
 }
 
 window#waybar.hidden {
-	opacity: 0.5;
+    background-color: transparent;
 }
 
 tooltip {
-	background: #1e1e2e;
+	/*background: #1e1e2e; */
 	border-radius: 15px;
 	border-width: 2px;
 	border-style: solid;
@@ -71,7 +71,6 @@ tooltip {
 
 #workspaces button:hover {
 	color: #1e1e1e;
-	border: 3px solid #1e1e2e;
 	background-color: #eba0ac;
     border-radius: 30%;
     padding: 0px;
@@ -82,7 +81,6 @@ tooltip {
 #bluetooth,
 #cpu {
     color: #f5e0dc;
-    border: 3px solid #11111b;
 	border-radius: 0px 0px 15px 0px;
 	background-color: #313244;
 	padding-top: 2px;
@@ -93,7 +91,6 @@ tooltip {
 }
 #memory{
     color: #f2cdcd;
-    border: 3px solid #11111b;
 	border-radius: 0px 0px 15px 15px;
 	background-color: #313244;
 	padding-top: 2px;
@@ -101,9 +98,9 @@ tooltip {
 	padding-right: 4px;
 	padding-left: 4px;
 }
+#window,
 #network{
     color: #f5c2e7;
-    border: 3px solid #11111b;
 	border-radius: 0px 0px 15px 15px;
 	background-color: #313244;
 	padding-top: 2px;
@@ -113,7 +110,6 @@ tooltip {
 }
 #custom-playerctl{
     color: #cba6f7;
-    border: 3px solid #11111b;
 	border-radius: 0px 0px 15px 15px;
 	background-color: #313244;
 	padding-top: 2px;
@@ -128,7 +124,6 @@ tooltip {
 
 #language{
     color: #fab387;
-    border: 3px solid #11111b;
 	border-radius: 0px 0px 15px 15px;
 	background-color: #313244;
 	padding-top: 2px;
@@ -138,7 +133,6 @@ tooltip {
 }
 #backlight{
     color: #f9e2af;
-    border: 3px solid #11111b;
 	border-radius: 0px 0px 15px 15px;
 	background-color: #313244;
 	padding-top: 2px;
@@ -148,7 +142,6 @@ tooltip {
 }
 #pulseaudio{
     color: #a6e3a1;
-    border: 3px solid #11111b;
 	border-radius: 0px 0px 15px 15px;
 	background-color: #313244;
 	padding-top: 2px;
@@ -158,7 +151,6 @@ tooltip {
 }
 #clock{
     color: #94e2d5;
-    border: 3px solid #11111b;
 	border-radius: 0px 0px 15px 15px;
 	background-color: #313244;
 	padding-top: 2px;
@@ -168,7 +160,6 @@ tooltip {
 }
 #battery{
     color: #89dceb;
-    border: 3px solid #11111b;
 	border-radius: 0px 0px 15px 15px;
 	background-color: #313244;
 	padding-top: 2px;
@@ -180,7 +171,6 @@ tooltip {
 #tray,
 #wireplumber,
 #workspaces{
-    border: 3px solid #11111b;
 	border-radius: 0px 0px 10px 10px;
 	background-color: #1e1e2e;
 	padding-top: 2px;
@@ -192,7 +182,6 @@ tooltip {
 
 #custom-notify{
     color: #b4befe;
-    border: 3px solid #11111b;
 	border-radius: 0px 0px 0px 15px;
 	background-color: #313244;
 	padding-top: 2px;
