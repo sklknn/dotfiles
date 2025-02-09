@@ -1,0 +1,8 @@
+[12:30:05 2025-02-09] FETCHING Version 2.39.2
+[12:30:05 2025-02-09] DOWNLOADING https://github.com/spicetify/cli/releases/download/v2.39.2/spicetify-2.39.2-linux-amd64.tar.gz
+[12:30:06 2025-02-09] EXTRACTING /home/sklknn/.spicetify/spicetify.tar.gz
+[12:30:06 2025-02-09] SETTING EXECUTABLE PERMISSIONS TO /home/sklknn/.spicetify/spicetify
+[12:30:06 2025-02-09] REMOVING /home/sklknn/.spicetify/spicetify.tar.gz
+[12:30:06 2025-02-09] spicetify path already set in /home/sklknn/.zshrc, continuing...
+[12:30:06 2025-02-09] spicetify v2.39.2 was installed successfully to /home/sklknn/.spicetify
+[12:30:06 2025-02-09] Run 'spicetify --help' to get started
