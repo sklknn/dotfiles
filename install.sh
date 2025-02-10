@@ -34,7 +34,7 @@ yay -S --noconfirm fuzzel wl-clipboard cliphist
 
 yay -S --noconfirm nautilus neovim
 
-yay -S --noconfitm nwg-look qt5ct qt6ct qt4ct
+yay -S --noconfitm nwg-look qt5ct qt6ct qt4ct gtk-engine-murrine sassc gnome-themes-extra
 
 yay -S --noconfirm pavucontrol iwdgui light 
 
@@ -65,3 +65,7 @@ sudo systemctl enable --now swayosd-libinput-backend.service
 sudo usermod -a -G video $USER
 
 sudo cp -rf dotfiles/unmanaged-by-stow/etc/greetd /etc/
+sudo cp -r ~/.themes/Catppuccin-Dark /usr/share/themes
+gsettings set org.gnome.desktop.default-applications.terminal exec /usr/bin/kitty
+
+curl -fsSL https://raw.githubusercontent.com/spicetify/cli/main/install.sh | sh
