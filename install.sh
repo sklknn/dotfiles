@@ -48,9 +48,9 @@ yay -S --noconfirm fzf ttf-jetbrains-mono-nerd zoxide
 
 chsh -s /bin/zsh
 
-systemctl --user enable --now hyprpaper.service
-systemctl --user enable --now hypridle.service
-systemctl --user enable --now hyprpolkitagent.service
+sudo systemctl --user enable --now hyprpaper.service
+sudo systemctl --user enable --now hypridle.service
+sudo systemctl --user enable --now hyprpolkitagent.service
 
 yay -S --noconfirm greetd greetd-regreet-git npm
 
@@ -63,3 +63,5 @@ yay -S --noconfirm cliphist udoskie hyprshot imv swayosd
 sudo systemctl enable --now swayosd-libinput-backend.service
 
 sudo usermod -a -G video $USER
+
+sudo cp -rf dotfiles/unmanaged-by-stow/etc/greetd /etc/

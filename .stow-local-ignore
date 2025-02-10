@@ -2,3 +2,5 @@
 .gitmodules
 README.*
 install.sh
+unmanaged-by-stow/
+unmanaged-by-stow/*

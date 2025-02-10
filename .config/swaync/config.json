@@ -113,7 +113,7 @@
             "label": "",
             "type": "toggle",
             "active": true,
-            "command": "/home/sklknn/dotfiles/.config/hypr/scripts/hyprsunset.sh" ,
+            "command": "/home/*/.config/hypr/scripts/hyprsunset.sh" ,
             "update_command": "echo $( ps -C 'hyprsunset' >/dev/null && echo 'true' || echo 'false')"
         }
       ]
