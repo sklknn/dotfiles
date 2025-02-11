@@ -60,7 +60,7 @@ yay -S --noconfirm archlinux-xdg-menu networkmanager network-manager-applet nm-c
 
 systemctl enable --now NetworkManager.service
 
-yay -S --noconfirm cliphist udoskie hyprshot imv swayosd
+yay -S --noconfirm cliphist udoskie hyprshot imv swayosd rofi-wayland
 
 sudo systemctl enable --now swayosd-libinput-backend.service
 
