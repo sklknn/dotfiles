@@ -8,14 +8,14 @@
     "fixed-center": true,
     "ipc": true,
 
-	"modules-left": ["cpu","memory", "network","custom/playerctl", "tray"],
+	"modules-left": ["network","custom/separator","custom/playerctl","group/expand"],
 	"modules-center": ["hyprland/window","hyprland/workspaces"],
-	"modules-right": ["hyprland/language","backlight","pulseaudio","clock", "battery","custom/notify"],
+	"modules-right": ["backlight","pulseaudio","pulseaudio/slider","clock", "battery","custom/notification"],
 	
 	"pulseaudio": {
 		"tooltip": false,
 		"scroll-step": 5,
-		"format": "{icon} {volume}%",
+		"format": "{icon}",
 		"format-muted": "{icon} {volume}%",
 		"format-icons": {
 			"default": ["", "", ""]
@@ -24,14 +24,18 @@
         "on-scroll-up": "swayosd-client --output-volume raise",
     	"on-scroll-down": "swayosd-client --output-volume lower"
 	},
-    "hyprland/language": {
-	    "format": "{}",
-    	"format-en": "US",
-    	"format-ru": "RU",
-    	"keyboard-name": "razer-razer-blackwidow-x-tournament-edition-keyboard",
-    	"on-click": "hyprctl switchxkblayout $SET_KB next"
+//    "hyprland/language": {
+//	    "format": "{}",
+//    	"format-en": "US",
+//    	"format-ru": "RU",
+//    	"keyboard-name": "razer-razer-blackwidow-x-tournament-edition-keyboard",
+//    	"on-click": "hyprctl switchxkblayout $SET_KB next"
+//    },
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal" 
     },
-
     "hyprland/window": {
 	    "format": "{}",
     	"max-length": 25,
@@ -54,7 +58,7 @@
         "tooltip-format-ethernet": "{ipaddr}",
 		"format-linked": "{ifname} (No IP) ",
 		"format-disconnected": "⚠",
-        "on-click": "uwsm app -- iwdgui"
+        "on-click": "uwsm app -- nm-connection-editor"
 		},
     "backlight": {
     	"interval": 2,
@@ -98,6 +102,23 @@
 		"icon-size":18,
 		"spacing": 10
 	},
+    "custom/expand": {
+        "format": ">",
+        "tooltip": false
+    },
+    "custom/separator":{
+        "format": "|",
+        "tooltip": false
+    },
+    "group/expand": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 600,
+            "transition-to-left": true,
+            "click-to-reveal": true
+        },
+        "modules": ["custom/expand","tray","custom/separator","cpu","custom/separator","memory","custom/separator","temperature"]
+    },
     "clock": {
     	"interval": 15,
         //"format": " {:%I:%M %p}", // AM PM format
@@ -125,6 +146,10 @@
     	"tooltip-format": "{used:0.1f}GB/{total:0.1f}G",
     	"on-click-right": "kitty --title btop sh -c 'btop'"
     },
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{temperatureC}°C "
+    },
     "custom/playerctl": {
 	    "format": "<span>{}</span>",
     	"return-type": "json",
@@ -136,30 +161,21 @@
     	"scroll-step": 5.0,
     	"smooth-scrolling-threshold": 1
     },
-    "custom/notify":{
-    	"tooltip": false,
-    	"format": "{icon}",
-    	"format-icons": {
-      	  "notification": "<span foreground='red'><sup></sup></span>",
-      	  "none": "",
-      	  "dnd-notification": "<span foreground='red'><sup></sup></span>",
-      	  "dnd-none": "",
-      	  "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      	  "inhibited-none": "",
-      	  "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      	  "dnd-inhibited-none": ""
-    	},
-    	"return-type": "json",
-    	"exec-if": "which swaync-client",
-    	"exec": "swaync-client -swb",
-    	"on-click": "swaync-client -t -sw",
-    	"on-click-right": "swaync-client -d -sw",
-    	"escape": true
+    "custom/notification": {
+        "tooltip": false,
+        "format": "",
+        "on-click": "swaync-client -t -sw",
+        "escape": true
     },
-    "hyrpland/workspaces": {
-    	"format": "{icon}",
-    	"on-scroll-up": "hyprctl dispatch workspace e+1",
-    	"on-scroll-down": "hyprctl dispatch workspace e-1",
-    	"on-click": "activate"
-	}
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "active": "",
+            "default": "",
+            "empty": ""
+        },
+        "persistent-workspaces": {
+            "*": [ 1,2,3,4 ]
+        }
+    }
 }

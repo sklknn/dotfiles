@@ -56,7 +56,9 @@ yay -S --noconfirm greetd greetd-regreet-git npm
 
 systemctl enable greetd.service
 
-yay -S --noconfirm archlinux-xdg-menu
+yay -S --noconfirm archlinux-xdg-menu networkmanager network-manager-applet nm-connection-editor networkmanager-openvpn
+
+systemctl enable --now NetworkManager.service
 
 yay -S --noconfirm cliphist udoskie hyprshot imv swayosd
 
