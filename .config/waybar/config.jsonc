@@ -41,14 +41,14 @@
     	"max-length": 25,
     	"separate-outputs": true,
     	"offscreen-css": true,
-    	"offscreen-css-text": "(inactive)",
-    	"rewrite": {
-    		"(.*) — Mozilla Firefox": " $1",
-    		"(.*) - zsh": " [$1]",
-    		"(.*) - $term": " [$1]",
-            "(.*) - nvim": " [$1]",
-            "(.*) - spotify": " [$1]"
-    	}
+    	"offscreen-css-text": "(inactive)"
+//    	"rewrite": {
+//    		"(.*) — Mozilla Firefox": " $1",
+//    		"(.*) - zsh": " [$1]",
+//    		"(.*) - $term": " [$1]",
+//            "(.*) - nvim": " [$1]",
+//            "(.*) - spotify": " [$1]"
+//    	}
     },
 	"network": {
 		// "interface": "wlp2*", // (Optional) To force the use of this interface
