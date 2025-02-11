@@ -100,7 +100,7 @@
         {
             "label": "",
             "type": "normal",
-            "command": "hyprctl dispatch exit"
+            "command": "hyprctl exec, uwsm stop"
         },
         {
             "label": "",
