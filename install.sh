@@ -52,9 +52,13 @@ sudo systemctl --user enable --now hyprpaper.service
 sudo systemctl --user enable --now hypridle.service
 sudo systemctl --user enable --now hyprpolkitagent.service
 
-yay -S --noconfirm greetd greetd-regreet-git npm
+yay -S --noconfirm sddm-git npm qt6-svg qt6-declarative qt5-quickcontrols2
 
-systemctl enable greetd.service
+echo "you will be asked to select a SDDM(login manager) theme, check https://github.com/Keyitdev/sddm-astronaut-theme/tree/master?tab=readme-ov-file if you want to see"
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/keyitdev/sddm-astronaut-theme/master/setup.sh)"
+
+#systemctl enable greetd.service
 
 yay -S --noconfirm archlinux-xdg-menu networkmanager network-manager-applet nm-connection-editor networkmanager-openvpn
 
