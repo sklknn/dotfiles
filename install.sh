@@ -48,15 +48,17 @@ yay -S --noconfirm fzf ttf-jetbrains-mono-nerd zoxide
 
 chsh -s /bin/zsh
 
-sudo systemctl --user enable --now hyprpaper.service
-sudo systemctl --user enable --now hypridle.service
-sudo systemctl --user enable --now hyprpolkitagent.service
+systemctl --user enable --now hyprpaper.service
+systemctl --user enable --now hypridle.service
+systemctl --user enable --now hyprpolkitagent.service
 
 yay -S --noconfirm sddm-git npm qt6-svg qt6-declarative qt5-quickcontrols2
 
 echo "you will be asked to select a SDDM(login manager) theme, check https://github.com/Keyitdev/sddm-astronaut-theme/tree/master?tab=readme-ov-file if you want to see"
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/keyitdev/sddm-astronaut-theme/master/setup.sh)"
+
+systemctl enable --now sddm.service
 
 #systemctl enable greetd.service
 
