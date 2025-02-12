@@ -71,6 +71,7 @@ zstyle ':completion"*' menu no
 alias ls='ls --color'
 alias vi='nvim'
 alias cd='z'
+alias fastfetch='clear && fastfetch --logo ~/.config/hypr/avatar.png --logo-width 20 --logo-height 10'
 
 #Shell integrations 
 eval "$(fzf --zsh)"
