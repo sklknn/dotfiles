@@ -18,7 +18,7 @@ yay -S --noconfirm hyprland-meta-git kitty zsh
 
 yay -S --noconfirm uwsm util-linux libnewt
 
-yay -S --noconfirm swaync 
+yay -S --noconfirm swaync darkly
 
 yay -S --noconfirm pipewire wireplumber 
 
