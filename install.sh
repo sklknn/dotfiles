@@ -12,7 +12,7 @@ yay -Y --gendb
 yay -Syu --devel
 yay -Y --devel --save 
 
-cd ~/git && git clone https://github.com/sklknn/dotfiles.git && cd dotfiles 
+cd ~ && git clone https://github.com/sklknn/dotfiles.git && cd dotfiles 
 
 yay -S --noconfirm hyprland-meta-git kitty zsh
 
@@ -30,7 +30,7 @@ systemctl --user enable --now waybar.service
 
 systemctl --user enable --now hyprpolkitagent.service 
 
-yay -S --noconfirm fuzzel wl-clipboard cliphist
+yay -S --noconfirm wl-clipboard cliphist
 
 yay -S --noconfirm nautilus neovim
 
