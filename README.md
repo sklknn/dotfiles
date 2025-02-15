@@ -8,7 +8,9 @@ Check .config folders for used requirements, such as fonts and other packages fo
 
 # Pics
 ![alt text](https://github.com/sklknn/dotfiles/blob/master/assets/scr1.png?raw=true)
-
+![alt text](https://github.com/sklknn/dotfiles/blob/master/assets/scr2.png?raw=true)
+![alt text](https://github.com/sklknn/dotfiles/blob/master/assets/scr3.png?raw=true)
+![alt text](https://github.com/sklknn/dotfiles/blob/master/assets/scr4.png?raw=true)
 
 # Installation 
 simply run
