@@ -74,13 +74,19 @@ sudo systemctl enable --now swayosd-libinput-backend.service
 
 sudo usermod -a -G video $USER
 
+#GTK THEME
 sudo cp -r ~/.themes/Catppuccin-Dark /usr/share/themes
+sudo cp -r ~/.themes/rose-pine-moon-gtk  /usr/share/themes
 gsettings set org.gnome.desktop.default-applications.terminal exec /usr/bin/kitty
 
 yay -S --noconfirm fastfetch unzip papirus-icon-theme udiskie rose-pine-hyprcursor rose-pine-cursor
 
 #curl -fsSL https://raw.githubusercontent.com/spicetify/cli/main/install.sh | sh
 
+#Folder icons 
+
 cd ~/git && git clone https://github.com/vinceliuice/Colloid-icon-theme.git && cd Colloid-icon-theme
 
 ./install.sh -s catppuccin
+
+

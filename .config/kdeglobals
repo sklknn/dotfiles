@@ -32,4 +32,4 @@ EnableRemoteFolderThumbnail=false
 MaximumRemoteSize=0
 
 [UiSettings]
-ColorScheme=catppuccin-mocha-sapphire
+ColorScheme=rose-pine
