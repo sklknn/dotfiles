@@ -14,7 +14,9 @@ yay -Y --devel --save
 
 cd ~ && git clone https://github.com/sklknn/dotfiles.git && cd dotfiles 
 
-yay -S --noconfirm hyprland-meta-git kitty zsh
+yay -S --noconfirm hyprland hypridle hyprcursor hyprsunset hyprpaper hyprlock hyprland-protocols hyprland-qt-support hyprland-qtutils hyprlang hyprpolkitagent hyprsysteminfo hyprutils xdg-desktop-portal-hyprland hyprwayland-scanner
+
+yay -S --noconfirm kitty zsh
 
 yay -S --noconfirm uwsm util-linux libnewt
 
@@ -34,9 +36,9 @@ yay -S --noconfirm wl-clipboard cliphist
 
 yay -S --noconfirm nautilus neovim
 
-yay -S --noconfitm nwg-look qt5ct qt6ct qt4ct gtk-engine-murrine sassc gnome-themes-extra
+yay -S --noconfirm nwg-look qt5ct qt6ct qt4ct gtk-engine-murrine sassc gnome-themes-extra
 
-yay -S --noconfirm pavucontrol iwdgui light 
+yay -S --noconfirm pavucontrol light 
 
 yay -S --noconfirm spotify-launcher telegram-desktop vesktop 
 
@@ -52,13 +54,13 @@ systemctl --user enable --now hyprpaper.service
 systemctl --user enable --now hypridle.service
 systemctl --user enable --now hyprpolkitagent.service
 
-yay -S --noconfirm sddm-git npm qt6-svg qt6-declarative qt5-quickcontrols2
+yay -S --noconfirm sddm npm qt6-svg qt6-declarative qt5-quickcontrols2
 
 echo "you will be asked to select a SDDM(login manager) theme, check https://github.com/Keyitdev/sddm-astronaut-theme/tree/master?tab=readme-ov-file if you want to see"
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/keyitdev/sddm-astronaut-theme/master/setup.sh)"
 
-systemctl enable --now sddm.service
+systemctl enable sddm.service
 
 #systemctl enable greetd.service
 
@@ -66,14 +68,16 @@ yay -S --noconfirm archlinux-xdg-menu networkmanager network-manager-applet nm-c
 
 systemctl enable --now NetworkManager.service
 
-yay -S --noconfirm cliphist udoskie hyprshot imv swayosd rofi-wayland
+yay -S --noconfirm cliphist hyprshot imv swayosd rofi-wayland
 
 sudo systemctl enable --now swayosd-libinput-backend.service
 
 sudo usermod -a -G video $USER
 
-sudo cp -rf dotfiles/unmanaged-by-stow/etc/greetd /etc/
 sudo cp -r ~/.themes/Catppuccin-Dark /usr/share/themes
 gsettings set org.gnome.desktop.default-applications.terminal exec /usr/bin/kitty
 
-curl -fsSL https://raw.githubusercontent.com/spicetify/cli/main/install.sh | sh
+yay -S --noconfirm fastfetch unzip papirus-icon-theme udiskie rose-pine-hyprcursor rose-pine-cursor
+
+#curl -fsSL https://raw.githubusercontent.com/spicetify/cli/main/install.sh | sh
+
