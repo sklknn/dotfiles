@@ -14,9 +14,7 @@ function set_wallpaper(){
     hyprctl hyprpaper wallpaper ",${wpPath}" 
 }
 while true; do 
-    if [pidof hyprpaper]; then
-        set_wallpaper
-        sleep 1800
-    fi
+    set_wallpaper
+    sleep 1800
 done
 

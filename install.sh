@@ -46,7 +46,7 @@ yay -S --noconfirm stow
 
 stow --adopt .
 
-yay -S --noconfirm fzf ttf-jetbrains-mono-nerd zoxide
+yay -S --noconfirm fzf ttf-jetbrains-mono-nerd zoxide cava
 
 chsh -s /bin/zsh
 
@@ -75,7 +75,7 @@ sudo systemctl enable --now swayosd-libinput-backend.service
 sudo usermod -a -G video $USER
 
 #GTK THEME
-sudo cp -r ~/.themes/Catppuccin-Dark /usr/share/themes
+#sudo cp -r ~/.themes/Catppuccin-Dark /usr/share/themes
 sudo cp -r ~/.themes/rose-pine-moon-gtk  /usr/share/themes
 gsettings set org.gnome.desktop.default-applications.terminal exec /usr/bin/kitty
 
