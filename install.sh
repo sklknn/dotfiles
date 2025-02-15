@@ -81,3 +81,6 @@ yay -S --noconfirm fastfetch unzip papirus-icon-theme udiskie rose-pine-hyprcurs
 
 #curl -fsSL https://raw.githubusercontent.com/spicetify/cli/main/install.sh | sh
 
+cd ~/git && git clone https://github.com/vinceliuice/Colloid-icon-theme.git && cd Colloid-icon-theme
+
+./install.sh -s catppuccin
