@@ -1,5 +1,7 @@
 .git
 .gitmodules
+.gitignore
+assets
 README.*
 install.sh
 unmanaged-by-stow/
