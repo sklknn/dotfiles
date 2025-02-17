@@ -14,7 +14,7 @@ yay -Y --devel --save
 
 cd ~ && git clone https://github.com/sklknn/dotfiles.git && cd dotfiles 
 
-yay -S --noconfirm hyprland hypridle hyprcursor hyprsunset hyprpaper hyprlock hyprland-protocols hyprland-qt-support hyprland-qtutils hyprlang hyprpolkitagent hyprsysteminfo hyprutils xdg-desktop-portal-hyprland hyprwayland-scanner
+yay -S --noconfirm hyprland hypridle hyprcursor hyprsunset hyprpaper hyprlock hyprland-protocols hyprland-qt-support hyprland-qtutils hyprlang hyprpolkitagent hyprsysteminfo hyprutils xdg-desktop-portal-hyprland hyprwayland-scanner hyprpicker
 
 yay -S --noconfirm kitty zsh
 
@@ -54,19 +54,19 @@ systemctl --user enable --now hyprpaper.service
 systemctl --user enable --now hypridle.service
 systemctl --user enable --now hyprpolkitagent.service
 
-yay -S --noconfirm sddm npm qt6-svg qt6-declarative qt5-quickcontrols2
+yay -S --noconfirm sddm npm qt6-svg qt6-declarative qt5-quickcontrols2 qt5-svg qt5-graphicaleffects
 
-echo "you will be asked to select a SDDM(login manager) theme, check https://github.com/Keyitdev/sddm-astronaut-theme/tree/master?tab=readme-ov-file if you want to see"
+sudo cp -r ~/dotfiles/unmanaged-by-stow/usr/share/sddm/themes/sugar-candy/ /usr/share/sddm/themes
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/keyitdev/sddm-astronaut-theme/master/setup.sh)"
+sudo cp -f ~/dotfiles/unmanaged-by-stow/etc/sddm.conf /etc
 
-systemctl enable sddm.service
+sudo systemctl enable sddm.service
 
 #systemctl enable greetd.service
 
 yay -S --noconfirm archlinux-xdg-menu networkmanager network-manager-applet nm-connection-editor networkmanager-openvpn
 
-systemctl enable --now NetworkManager.service
+sudo systemctl enable --now NetworkManager.service
 
 yay -S --noconfirm cliphist hyprshot imv swayosd rofi-wayland
 
