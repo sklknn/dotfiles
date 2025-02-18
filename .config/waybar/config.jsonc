@@ -8,9 +8,9 @@
     "fixed-center": true,
     "ipc": true,
 
-	"modules-left": ["network","custom/separator","custom/playerctl","group/expand"],
+	"modules-left": ["gamemode","network","custom/separator","custom/playerctl","group/expand"],
 	"modules-center": ["hyprland/window","hyprland/workspaces"],
-	"modules-right": ["backlight","pulseaudio","pulseaudio/slider","clock", "battery","custom/notification"],
+	"modules-right": ["hyprland/language","backlight","pulseaudio","pulseaudio/slider","clock", "battery","custom/notification"],
 	
 	"pulseaudio": {
 		"tooltip": false,
@@ -24,13 +24,24 @@
         "on-scroll-up": "swayosd-client --output-volume raise",
     	"on-scroll-down": "swayosd-client --output-volume lower"
 	},
-//    "hyprland/language": {
-//	    "format": "{}",
-//    	"format-en": "US",
-//    	"format-ru": "RU",
-//    	"keyboard-name": "razer-razer-blackwidow-x-tournament-edition-keyboard",
-//    	"on-click": "hyprctl switchxkblayout $SET_KB next"
-//    },
+    "gamemode": {
+	    "format": "{glyph}",
+	    "format-alt": "{glyph} {count}",
+    	"glyph": "",
+	    "hide-not-running": true,
+	    "use-icon": true,
+    	"icon-name": "input-gaming-symbolic",
+	    "icon-spacing": 4,
+    	"icon-size": 20,
+    	"tooltip": true,
+    	"tooltip-format": "Games running: {count}"
+    },
+    "hyprland/language": {
+	    "format": "{}",
+    	"format-en": "US",
+    	"format-ru": "RU",
+    	"on-click": "hyprctl switchxkblayout $SET_KB next"
+    },
     "pulseaudio/slider": {
         "min": 0,
         "max": 100,
