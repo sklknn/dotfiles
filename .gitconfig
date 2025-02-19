@@ -1,3 +1,5 @@
 [user]
 	email = 60268027+sklknn@users.noreply.github.com
-	name = Nikita Skulkin
+    name = Nikita Skulkin
+[core]
+    editor = nvim
