@@ -1,10 +1,12 @@
 #!/bin/bash
 
-echo "Welocome to my dots install script"
+echo "Dots install script"
 
+#use pacman without password 
 echo "%wheel ALL=(ALL) NOPASSWD: /usr/bin/pacman
 %wheel ALL=(ALL) NOPASSWD: /usr/bin/yay" | sudo tee -a /etc/sudoers
 
+#install yay
 cd ~ && mkdir git && cd git 
 sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si 
 
@@ -12,8 +14,10 @@ yay -Y --gendb
 yay -Syu --devel
 yay -Y --devel --save 
 
+#install dotfiles
 cd ~ && git clone https://github.com/sklknn/dotfiles.git && cd dotfiles 
 
+#dependencies
 yay -S --noconfirm hyprland hypridle hyprcursor hyprsunset hyprpaper hyprlock hyprland-protocols hyprland-qt-support hyprland-qtutils hyprlang hyprpolkitagent hyprsysteminfo hyprutils xdg-desktop-portal-hyprland hyprwayland-scanner hyprpicker
 
 yay -S --noconfirm kitty zsh
@@ -75,8 +79,10 @@ sudo systemctl enable --now swayosd-libinput-backend.service
 sudo usermod -a -G video $USER
 
 #GTK THEME
+yay -S --noconfirm rose-pine-gtk-theme-full
 #sudo cp -r ~/.themes/Catppuccin-Dark /usr/share/themes
-sudo cp -r ~/.themes/rose-pine-moon-gtk  /usr/share/themes
+#sudo cp -r ~/.themes/rose-pine-moon-gtk  /usr/share/themes
+#kitty is default terminal in gtk
 gsettings set org.gnome.desktop.default-applications.terminal exec /usr/bin/kitty
 
 yay -S --noconfirm fastfetch unzip papirus-icon-theme udiskie rose-pine-hyprcursor rose-pine-cursor
