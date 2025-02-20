@@ -79,11 +79,14 @@ sudo systemctl enable --now swayosd-libinput-backend.service
 sudo usermod -a -G video $USER
 
 #GTK THEME
-yay -S --noconfirm rose-pine-gtk-theme-full
+#yay -S --noconfirm rose-pine-gtk-theme-full
 #sudo cp -r ~/.themes/Catppuccin-Dark /usr/share/themes
-#sudo cp -r ~/.themes/rose-pine-moon-gtk  /usr/share/themes
+sudo cp -r ~/.themes/rose-pine-moon-gtk  /usr/share/themes
 #kitty is default terminal in gtk
 gsettings set org.gnome.desktop.default-applications.terminal exec /usr/bin/kitty
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
+gsettings set org.gnome.desktop.interface gtk-theme 'rose-pine-moon'
+
 
 yay -S --noconfirm fastfetch unzip papirus-icon-theme udiskie rose-pine-hyprcursor rose-pine-cursor
 
