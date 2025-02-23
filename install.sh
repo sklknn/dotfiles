@@ -20,7 +20,7 @@ cd ~ && git clone https://github.com/sklknn/dotfiles.git && cd dotfiles
 #dependencies
 yay -S --noconfirm hyprland hypridle hyprcursor hyprsunset hyprpaper hyprlock hyprland-protocols hyprland-qt-support hyprland-qtutils hyprlang hyprpolkitagent hyprsysteminfo hyprutils xdg-desktop-portal-hyprland hyprwayland-scanner hyprpicker
 
-yay -S --noconfirm kitty zsh
+yay -S --noconfirm kitty zsh bat
 
 yay -S --noconfirm uwsm util-linux libnewt
 
