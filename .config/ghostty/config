@@ -55,7 +55,7 @@ font-size = 13
 
 alpha-blending = native
 
-theme = rose-pine-moon
+theme = rose-pine
 
 background-opacity = 0.5
 background-blur = true
